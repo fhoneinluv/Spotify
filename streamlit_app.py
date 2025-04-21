@@ -4,13 +4,6 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import pandas as pd
 
-# Cấu hình Spotify OAuth
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
-    client_id="1fda60773c3344c188c7a3bea0c8eb58",
-    client_secret="30c823bdd5954e1bb942f8811b1744ae",
-    redirect_uri="http://127.0.0.1:8888/callback",  # <-- dùng 127.0.0.1
-    scope="playlist-modify-public playlist-modify-private"
-))
 
 st.title("🎶 Tìm kiếm nghệ sĩ & Quản lý Playlist Spotify")
 
