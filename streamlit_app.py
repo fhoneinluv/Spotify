@@ -1,8 +1,15 @@
-
 import streamlit as st
+import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import pandas as pd
 
+# Lấy thông tin từ secrets.toml
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
+    client_id=st.secrets["SPOTIPY_CLIENT_ID"],
+    client_secret=st.secrets["SPOTIPY_CLIENT_SECRET"],
+    redirect_uri=st.secrets["SPOTIPY_REDIRECT_URI"],
+    scope="playlist-modify-public playlist-modify-private"
+))
 
 st.title("🎶 Tìm kiếm nghệ sĩ & Quản lý Playlist Spotify")
 
